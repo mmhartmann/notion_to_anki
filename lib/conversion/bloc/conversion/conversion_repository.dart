@@ -78,7 +78,7 @@ class FileConversionResult extends Equatable {
 class HtmlUtils {
   /// Extract the title property from html content
   static String? extractTitle(String content) {
-    final titleRegex = RegExp("<title>(.*)<\/title>", multiLine: true);
+    final titleRegex = RegExp("<title>(.*)</title>", multiLine: true);
     return titleRegex.firstMatch(content)?.group(1);
   }
 
@@ -89,7 +89,7 @@ class HtmlUtils {
 
     if (imagePaths.length < pathMatches.length) {
       // TODO: implement warning
-      print("WARNING: Not enough image paths provided, images will be left empty");
+      // print("WARNING: Not enough image paths provided, images will be left empty");
     }
 
     for (int i = 0; i < min(imagePaths.length, pathMatches.length); i++) {
@@ -134,7 +134,7 @@ class FindReplacePattern {
 class NotionFindReplacePatterns {
   static final _deleteHeaderIcon = FindReplacePattern(
     findPattern: r'<div class="page-header-icon [a-z-_]*"><img class="icon" src'
-        '="https:\/\/www\.notion\.so\/icons\/[a-z-_]*\.svg"\/><\/div>',
+        '="https://www.notion.so/icons/[a-z-_]*.svg"/></div>',
     replacePattern: '',
   );
 
