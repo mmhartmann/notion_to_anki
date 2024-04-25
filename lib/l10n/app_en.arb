@@ -10,7 +10,7 @@
     },
     "selectFilesButton": "Select",
     "removePropertiesTableTitle": "Remove Notion properties table",
-    "imageReplacementPathsTitle": "Image Replacement Paths",
+    "imageReplacementPathsTitle": "Anki Image Paths",
     "imageReplacementPathsHelpUrl": "https://google.com/",
     "imageReplacementPathsLabel": "One path per line; For example:\nimage1.png\nimage2.png",
     "convertButton": "Convert",
