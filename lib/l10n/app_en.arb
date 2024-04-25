@@ -9,5 +9,13 @@
         }
     },
     "selectFilesButton": "Select",
-    "removePropertiesTableTitle": "Remove Notion properties table"
+    "removePropertiesTableTitle": "Remove Notion properties table",
+    "imageReplacementPathsTitle": "Image Replacement Paths",
+    "imageReplacementPathsHelpUrl": "https://google.com/",
+    "imageReplacementPathsLabel": "One path per line; For example:\nimage1.png\nimage2.png",
+    "convertButton": "Convert",
+    "convertingFilesDescription": "Converting files...",
+    "convertedFilesTitle": "Converted Files",
+    "copyButtonText": "Copy",
+    "copyButtonTextAfterCopy": "Copied"
 }
