@@ -1,6 +1,12 @@
 {
-    "helloWorld": "Hello World!",
-    "@helloWorld": {
-        "description": "The conventional newborn programmer greeting"
-    }
+    "selectFilesTitle": "Select one or multiple '.html' files to convert",
+    "numberOfFilesSelectedLabel": "{number} file(s) selected",
+    "@numberOfFilesSelectedLabel": {
+        "placeholders": {
+            "number": {
+                "type": "int"
+            }
+        }
+    },
+    "selectFilesButton": "Select"
 }

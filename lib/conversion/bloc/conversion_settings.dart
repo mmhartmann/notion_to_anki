@@ -1,11 +1,12 @@
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-/// A cubit handling the [ConversionSettings].
-class ConversionSettingsCubit extends Cubit<ConversionSettings> {
-  ConversionSettingsCubit() : super(ConversionSettings());
+/// A cubit handling the [ConversionSettingsState].
+class ConversionSettingsCubit extends Cubit<ConversionSettingsState> {
+  ConversionSettingsCubit() : super(ConversionSettingsState());
 
-  void changeSelectedFileOrFolderPath(String newPath) =>
-      emit(state..selectedFileOrFolderPath = newPath);
+  void changeFileSelection(FilePickerResult newSelection) =>
+      emit(state..fileSelection = newSelection);
 
   void changeRemovePropertiesTable(bool newState) => emit(state..removePropertiesTable = newState);
 
@@ -14,15 +15,16 @@ class ConversionSettingsCubit extends Cubit<ConversionSettings> {
 }
 
 /// Contains all necessary information needed to execute the conversion command.
-class ConversionSettings {
-  ConversionSettings({
-    this.selectedFileOrFolderPath,
+class ConversionSettingsState {
+  ConversionSettingsState({
+    this.fileSelection,
     this.removePropertiesTable = true,
     this.imageReplacementPaths = "",
   });
 
-  /// A specific file or a folder containing the files to be converted.
-  String? selectedFileOrFolderPath;
+  /// Selected single or multiple files or a folders containing the files to be
+  /// converted.
+  FilePickerResult? fileSelection;
 
   /// Whether to remove the notion "properties" table.
   bool removePropertiesTable;
