@@ -157,7 +157,7 @@ class NotionFindReplacePatterns {
         ' body * { color: #000; }',
   );
 
-  static final closeToggles =
+  static final _closeToggles =
       FindReplacePattern(findPattern: r'<details open="">', replacePattern: r'<details>');
 
   static List<FindReplacePattern> getPatterns(bool includeDeletePropertiesTable) => [
@@ -167,6 +167,7 @@ class NotionFindReplacePatterns {
         _limitStylingToNotionDiv2,
         _wrapBodyInDiv,
         _applyCustomStyling,
+        _closeToggles,
       ];
 
   /// Runs the definitions' search and replace functions
