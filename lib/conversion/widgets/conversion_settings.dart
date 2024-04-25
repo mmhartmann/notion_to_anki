@@ -18,13 +18,16 @@ class ConversionSettingsWidget extends StatelessWidget {
       child: Column(
         children: [
           SelectedFileOrFolderSettingWidget(),
+          SizedBox(height: 20),
+          RemovePropertiesTableSettingWidget(),
+          SizedBox(height: 20),
         ],
       ),
     );
   }
 }
 
-/// Displays the selected file or folder to convert and lets the user change it.
+/// Displays the selected files to convert and lets the user change it.
 class SelectedFileOrFolderSettingWidget extends StatelessWidget {
   const SelectedFileOrFolderSettingWidget({super.key});
 
@@ -68,5 +71,36 @@ class SelectedFileOrFolderSettingWidget extends StatelessWidget {
     if (result != null && result.count > 0) {
       settingsCubit.changeFileSelection(result);
     }
+  }
+}
+
+///
+class RemovePropertiesTableSettingWidget extends StatelessWidget {
+  const RemovePropertiesTableSettingWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<ConversionSettingsCubit, ConversionSettingsState>(
+      builder: (context, state) => Row(children: [
+        Expanded(
+          child: Text(
+            context.l10n.removePropertiesTableTitle,
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
+        ),
+        const SizedBox(width: 12),
+        Switch(
+          value: state.removePropertiesTable,
+          onChanged: (newValue) => _changeValue(
+            newValue,
+            context.read<ConversionSettingsCubit>(),
+          ),
+        ),
+      ]),
+    );
+  }
+
+  void _changeValue(bool newValue, ConversionSettingsCubit settingsCubit) {
+    settingsCubit.changeRemovePropertiesTable(newValue);
   }
 }

@@ -8,5 +8,6 @@
             }
         }
     },
-    "selectFilesButton": "Select"
+    "selectFilesButton": "Select",
+    "removePropertiesTableTitle": "Remove Notion properties table"
 }

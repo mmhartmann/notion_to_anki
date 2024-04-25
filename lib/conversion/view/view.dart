@@ -10,7 +10,7 @@ class ConversionView extends StatelessWidget {
     return Scaffold(
       body: BlocProvider(
         create: (_) => ConversionSettingsCubit(),
-        child: ConversionSettingsWidget(),
+        child: const ConversionSettingsWidget(),
       ),
     );
   }
