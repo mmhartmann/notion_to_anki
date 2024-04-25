@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'conversion/conversion.dart';
 import 'l10n/l10n.dart';
 
 void main() {
@@ -19,18 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Scaffold(body: HomePage()),
+      home: const ConversionView(),
     );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(context.l10n.helloWorld);
   }
 }
